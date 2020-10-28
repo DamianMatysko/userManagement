@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "users-management"
+    }
+  },
+  "defaultProject": "users-management",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,6 +1,11 @@
-<p>users works!</p>
+  <p>users works!</p>
+
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+    {{errorMessage}}
+  </div>
+
 <ul>
-    <li *ngFor="let user of users">
+    <li *ngFor="let user of (users$ | async)">
         {{user.id}} {{user.name}} {{user.email}}</li>
 </ul>
 
@@ -9,7 +14,7 @@
         <tr><th>id</th><th>meno</th><th>e-mail</th></tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of users" 
+        <tr *ngFor="let user of users"
         (click)="selectUser(user)" >
 	<td>{{user.id}}</td>
 	<td>{{user.name}}</td>
