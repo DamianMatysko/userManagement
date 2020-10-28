@@ -1,0 +1,24 @@
+
+<table class="table table-hover">
+  <thead>
+  <tr><th>id</th>
+    <th>meno</th>
+    <th>e-mail</th>
+  <th>posledne prihlasenie</th>
+  <th>aktivny</th>
+  <th>skupiny</th></tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users" >
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.lastLogin}}</td>
+    <td>{{user.active}}</td>
+    <td>{{user.groups}}</td>
+
+  </tr>
+  </tbody>
+</table>
+
+
