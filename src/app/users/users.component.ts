@@ -21,10 +21,11 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
 //    this.users = this.usersService.getUsers();
-    this.users$ = this.usersService.getUsersAsynchronne();  // make a second channel. This channel only put users into users$.
-    this.usersService.getUsers().subscribe(userFromService => {
-        console.log('Data has been recieved!');
-        this.users = userFromService;
+    this.users$ = this.usersService.getUsers();
+    this.usersService.getUsers().subscribe(
+      usersFromService => {
+        console.log("Prišli dátat zo servera: ", usersFromService);
+        this.users = usersFromService;
       },
       error => {
         if (error instanceof HttpErrorResponse) {
